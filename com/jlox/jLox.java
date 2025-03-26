@@ -45,7 +45,7 @@ public class jLox {
   }
 
   private static void run(String source) {
-    Scanner sc = new Scanner(source);
+    Scanner scanner = new Scanner(source);
     List<Token> tokens = scanner.scanTokens();
 
     for(Token token: tokens) {
