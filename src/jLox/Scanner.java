@@ -79,6 +79,12 @@ public class Scanner {
 			if (match('/')) {
 				while (peek() != '\n' && !isAtEnd())
 					advance();
+			} else if (match('*')) { // multi line comment support added, not for nested.
+				while((peek() != '*' && peekNext() != '/') && !isAtEnd()) {
+					advance();
+				}
+				advance();
+				advance();
 			} else {
 				addToken(SLASH);
 			}
